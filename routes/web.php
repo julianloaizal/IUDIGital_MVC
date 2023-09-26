@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategorytController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
+Route::resource('/dashboard/post', PostController::class);
+Route::resource('/dashboard/category', CategorytController::class);
 Route::get('/', function () {
     return view('welcome');
 });
