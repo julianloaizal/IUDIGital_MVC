@@ -12,6 +12,11 @@
     <title>Document</title>
 </head>
 <body>
+    {{--@include('dashboard.partials.nav-header-main')
+    <div class="container">
+        @include('dashboard.partials.session-flash-status')
+        @yield('content')
+    </div>
     {{-- .container.section --}}
     <div class="container section">
         @if(session('status'))
