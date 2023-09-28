@@ -16,13 +16,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts =  Post::orderBy('created_at', 'desc')->paginate(5);
+        $posts =  Post::orderBy('created_at', 'asc')->paginate(5);
         return view('dashboard.post.index', ['posts' => $posts]);
     }
     
     public function create()
     {
-        return view('dashboard.post.create');
+        return view('dashboard.post.create', ['post' => new Post()]);
     }
 
     /**
@@ -50,7 +50,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        
+        return view('dashboard.post.edit', ['post' => $post]);
     }
 
     /**
@@ -62,7 +63,8 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        // que pongo aqui
+        
     }
 
     /**
